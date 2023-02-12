@@ -1,0 +1,109 @@
+.introducao {
+  display: flex;
+  margin: 0 40px;
+  gap: 140px;
+  justify-content: space-around;
+  margin-bottom: 160px;
+  margin-top: 60px;
+  align-items: center;
+}
+/*ajeitar fonte*/
+.introducao .apresentacao p {
+  max-width: 40ch;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  padding: 2.5rem;
+  border: 1px solid black;
+  position: relative;
+}
+.apresentacao {
+  position: relative;
+}
+.apresentacao::before {
+  content: "";
+  position: absolute;
+  display: inline-block;
+  background-image: url("/coisas/detalhe-intro.svg");
+  width: 62px;
+  height: 78px;
+  left: -25px;
+  bottom: -40px;
+}
+.introducao .apresentacao p::before {
+  content: '"';
+  position: absolute;
+  display: inline-block;
+  font-size: 4rem;
+  left: 15px;
+  top: 0px;
+  color: #f25c05;
+}
+.introducao .apresentacao p::after {
+  content: '"';
+  position: absolute;
+  display: inline-block;
+  font-size: 4rem;
+  right: 40px;
+  bottom: -30px;
+  color: #f25c05;
+}
+
+.introducao .titulo {
+  display: grid;
+  gap: 2rem;
+}
+.introducao .titulo h1 {
+  font-size: 4rem;
+  position: relative;
+}
+.introducao .titulo h1::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 80px;
+  position: absolute;
+  background-image: linear-gradient(180deg, #f89016 14.9%, #f25c05 100%);
+  left: -40px;
+  transform: matrix(1, 0.01, -0.09, 1, 0, 0);
+  border-radius: 4px;
+}
+.introducao .titulo p {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.introducao .titulo span {
+  color: #f2b705;
+}
+@media (max-width: 950px) {
+  .introducao {
+    flex-direction: column-reverse;
+    transition: linear 1s;
+  }
+  .introducao .titulo h1 {
+    font-size: 3rem;
+    transition: linear 1s;
+  }
+  .introducao {
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 480px) {
+  .introducao .titulo h1 {
+    font-size: 2rem;
+    transition: linear 1s;
+  }
+  .introducao .titulo h1::before {
+    bottom: -50px;
+    rotate: 85deg;
+    width: 10px;
+    height: 100px;
+    left: 10px;
+    transition: linear 1s;
+  }
+  .introducao .apresentacao p {
+    font-size: 1rem;
+    border: 1px solid #f25c05;
+    transition: linear 1s;
+    min-width: 20ch;
+  }
+}
